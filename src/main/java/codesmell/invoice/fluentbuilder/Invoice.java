@@ -58,7 +58,7 @@ public class Invoice {
 	 * more fluent Builder
 	 */
 	public static class Builder {
-		Invoice managedInstance = new Invoice();
+		private Invoice managedInstance = new Invoice();
 
 		/**
 		 * fluent setters for date
