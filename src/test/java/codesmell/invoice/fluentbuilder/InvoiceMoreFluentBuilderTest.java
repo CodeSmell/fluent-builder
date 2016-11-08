@@ -7,7 +7,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import codesmell.invoice.builder.InvoiceItem;
+import codesmell.invoice.fluentbuilder.InvoiceItem;
 import codesmell.invoice.fluentbuilder.Invoice;
 import codesmell.invoice.fluentbuilder.InvoiceActor;
 import codesmell.invoice.fluentbuilder.InvoiceActorType;
