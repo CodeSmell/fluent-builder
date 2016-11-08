@@ -1,10 +1,14 @@
 package codesmell.invoice.fluentbuilder;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.function.Consumer;
 
+import javax.annotation.concurrent.Immutable;
+
+@Immutable
 public class Invoice {
 
 	private InvoiceActor invoiceSupplier;
@@ -51,7 +55,7 @@ public class Invoice {
 	}
 
 	public List<InvoiceItem> getItems() {
-		return items;
+		return Collections.unmodifiableList(items);
 	}
 
 	/**

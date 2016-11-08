@@ -2,15 +2,24 @@ package codesmell.invoice.fluentbuilder;
 
 import java.util.function.Consumer;
 
-public class InvoiceActor {
+import javax.annotation.concurrent.Immutable;
+
+@Immutable
+public final class InvoiceActor {
 
 	private String actorName;
 	private InvoiceActorType actorType;
 
+	/**
+	 * static factory method for builder
+	 */
 	public static Builder builder() {
 		return new InvoiceActor.Builder();
 	}
-
+	
+	/**
+	 * forces use of the Builder
+	 */
 	private InvoiceActor() {
 	}
 	
@@ -18,16 +27,8 @@ public class InvoiceActor {
 		return actorName;
 	}
 
-	public void setActorName(String actorName) {
-		this.actorName = actorName;
-	}
-
 	public InvoiceActorType getActorType() {
 		return actorType;
-	}
-
-	public void setActorType(InvoiceActorType actorType) {
-		this.actorType = actorType;
 	}
 
 	public static class Builder {
@@ -74,7 +75,7 @@ public class InvoiceActor {
 		}
 
 		/**
-		 * build 
+		 * end 
 		 * @return
 		 */
 		public Invoice.Builder end() {

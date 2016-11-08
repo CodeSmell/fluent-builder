@@ -2,15 +2,27 @@ package codesmell.invoice.fluentbuilder;
 
 import java.util.function.Consumer;
 
-public class InvoiceItem {
+import javax.annotation.concurrent.Immutable;
+
+@Immutable
+public final class InvoiceItem {
 	private String itemGtin;
 	private Integer quantityRequested;
 	private Integer quantityShipped;
 
+	/**
+	 * static factory method for builder
+	 */
 	public static Builder builder() {
 		return new InvoiceItem.Builder();
 	}
-
+	
+	/**
+	 * forces use of the Builder
+	 */
+	private InvoiceItem() {
+	}
+	
 	public String getItemGtin() {
 		return itemGtin;
 	}
